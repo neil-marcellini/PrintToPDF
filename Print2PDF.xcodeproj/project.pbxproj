@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		315C5A90243981CF0061C8E3 /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C5A8F243981CF0061C8E3 /* InvoiceComposer.swift */; };
+		315C5A922439931C0061C8E3 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C5A912439931C0061C8E3 /* CustomPrintPageRenderer.swift */; };
 		C0C922211D0FFDE5000D4607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C922201D0FFDE5000D4607 /* AppDelegate.swift */; };
 		C0C922261D0FFDE5000D4607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C922241D0FFDE5000D4607 /* Main.storyboard */; };
 		C0C922281D0FFDE6000D4607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C922271D0FFDE6000D4607 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		315C5A8F243981CF0061C8E3 /* InvoiceComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
+		315C5A912439931C0061C8E3 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		C0C9221D1D0FFDE5000D4607 /* Print2PDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Print2PDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C922201D0FFDE5000D4607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C922251D0FFDE5000D4607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				C0C922341D0FFE67000D4607 /* CreatorViewController.swift */,
 				315C5A8F243981CF0061C8E3 /* InvoiceComposer.swift */,
 				C0C922361D1002C4000D4607 /* AddItemViewController.swift */,
+				315C5A912439931C0061C8E3 /* CustomPrintPageRenderer.swift */,
 				C0C9223F1D105886000D4607 /* PreviewViewController.swift */,
 				C0C922241D0FFDE5000D4607 /* Main.storyboard */,
 				C0C922271D0FFDE6000D4607 /* Assets.xcassets */,
@@ -171,6 +174,7 @@
 			files = (
 				C0C922371D1002C4000D4607 /* AddItemViewController.swift in Sources */,
 				C0C922351D0FFE67000D4607 /* CreatorViewController.swift in Sources */,
+				315C5A922439931C0061C8E3 /* CustomPrintPageRenderer.swift in Sources */,
 				C0C922211D0FFDE5000D4607 /* AppDelegate.swift in Sources */,
 				C0C922401D105886000D4607 /* PreviewViewController.swift in Sources */,
 				C0C922331D0FFE1B000D4607 /* InvoiceListViewController.swift in Sources */,

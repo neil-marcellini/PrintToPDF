@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class InvoiceComposer: NSObject {
     let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "invoice", ofType:"html")
@@ -68,11 +69,11 @@ class InvoiceComposer: NSObject {
                     itemHTMLContent = itemHTMLContent.replacingOccurrences(of:"#PRICE#", with: formattedPrice)
                    // Add the item's HTML code to the general items string.
                    allItems += itemHTMLContent
-                    // Set the items.
-                    HTMLContent = HTMLContent.replacingOccurrences(of:"#ITEMS#", with: allItems)
-                   // The HTML code is ready.
-                   return HTMLContent
                 }
+                // Set the items.
+                HTMLContent = HTMLContent.replacingOccurrences(of:"#ITEMS#", with: allItems)
+                // The HTML code is ready.
+                return HTMLContent
             }
             
         }
@@ -80,5 +81,23 @@ class InvoiceComposer: NSObject {
             print("Unable to open html template")
         }
         return nil
+    }
+    
+    func exportHTMLContentToPDF(HTMLContent: String) {
+        let printPageRenderer = CustomPrintPageRenderer()
+        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+        printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+        let pdfData = drawPDFUsingPrintPageRenderer(printPageRender: printPageRenderer)
+        let pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/Invoice\(invoiceNumber ?? "0").pdf"
+        pdfData!.write(toFile: pdfFilename, atomically: true)
+        print(pdfFilename)
+    }
+    func drawPDFUsingPrintPageRenderer(printPageRender: UIPrintPageRenderer) -> NSData! {
+        let data = NSMutableData()
+        UIGraphicsBeginPDFContextToData(data, CGRect.zero, nil)
+        UIGraphicsBeginPDFPage()
+        printPageRender.drawPage(at: 0, in: UIGraphicsGetPDFContextBounds())
+        UIGraphicsEndPDFContext()
+        return data
     }
 }
